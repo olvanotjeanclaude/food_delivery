@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:food_delivery/data/data.dart';
+import "package:food_delivery/widgets/food_category.dart";
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -58,7 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(30.0),
                     borderSide: const BorderSide(width: 0.8))),
           ),
-        )
+        ),
+        const FoodCategories()
       ]),
     );
   }
