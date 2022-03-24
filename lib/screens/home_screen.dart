@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:food_delivery/data/data.dart';
+import 'package:food_delivery/screens/nearby_restaurants.dart';
 import 'package:food_delivery/widgets/recent_orders.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,7 +39,16 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(20),
           child: _searchOrder(),
         ),
-        const FoodCategories()
+        const FoodCategories(),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
+          child: Text(
+            "Near By Restaurants",
+            style: TextStyle(
+                fontWeight: FontWeight.w600, letterSpacing: 1.2, fontSize: 20),
+          ),
+        ),
+        const NearByRestaurants(),
       ]),
     );
   }

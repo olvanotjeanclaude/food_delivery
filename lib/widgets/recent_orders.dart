@@ -35,7 +35,7 @@ class FoodCategories extends StatelessWidget {
 
   Container _recentOrderBuilders(Order orders, BuildContext context) {
     return Container(
-      width: 320,
+      width: 300,
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           border: Border.all(width: 1.5, color: Theme.of(context).primaryColor),
@@ -48,7 +48,7 @@ class FoodCategories extends StatelessWidget {
             child: Row(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(10.0),
                   child: Image.asset(
                     orders.food.imageUrl,
                     width: 100,
