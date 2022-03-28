@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/data/data.dart';
 import 'package:food_delivery/models/restaurant.dart';
 import 'package:food_delivery/screens/restaurant_detail.dart';
+import 'package:food_delivery/widgets/stars.dart';
 
 class NearByRestaurants extends StatelessWidget {
   const NearByRestaurants({Key? key}) : super(key: key);
@@ -18,13 +19,15 @@ class NearByRestaurants extends StatelessWidget {
   }
 
   Widget _buidRestaurant(Restaurant restaurant, context) {
-    const imgSize = 80.0;
+    const imgSize = 100.0;
     return GestureDetector(
       onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: ((context) => const RestaurantDetail())));
+                builder: ((context) => RestaurantDetail(
+                      restaurant: restaurant,
+                    ))));
       },
       child: Container(
         margin: const EdgeInsets.all(10),
@@ -51,6 +54,7 @@ class NearByRestaurants extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
+                    Stars(starNumber: restaurant.rating),
                     const SizedBox(height: 4),
                     Text(
                       restaurant.address,
